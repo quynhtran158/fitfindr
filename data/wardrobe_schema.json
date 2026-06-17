@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "description": "Schema for a user wardrobe. Each item in 'items' represents one piece of clothing.",
+  "fields": {
+    "items": {
+      "type": "array",
+      "description": "List of clothing items the user owns",
+      "item_fields": {
+        "id": "string — unique identifier",
+        "title": "string — short name for the item",
+        "category": "string — tops | bottoms | dresses | outerwear | shoes | accessories",
+        "style_tags": "array of strings — style descriptors e.g. vintage, minimal, streetwear",
+        "colors": "array of strings — main colors",
+        "fit_notes": "string — optional notes about how the item fits or how the user styles it"
+      }
+    },
+    "style_preferences": {
+      "type": "array of strings",
+      "description": "User's overall style preferences e.g. 90s, minimal, vintage"
+    },
+    "size": {
+      "type": "string",
+      "description": "User's general clothing size"
+    }
+  },
+  "example_wardrobe": {
+    "size": "M",
+    "style_preferences": ["vintage", "90s", "grunge", "streetwear"],
+    "items": [
+      {
+        "id": "w1",
+        "title": "Baggy Levi's Jeans",
+        "category": "bottoms",
+        "style_tags": ["vintage", "denim", "baggy"],
+        "colors": ["blue", "denim"],
+        "fit_notes": "high waist, very baggy through the leg"
+      },
+      {
+        "id": "w2",
+        "title": "Black Chunky Platform Boots",
+        "category": "shoes",
+        "style_tags": ["chunky", "boots", "grunge"],
+        "colors": ["black"],
+        "fit_notes": "chunky sole, lace-up"
+      },
+      {
+        "id": "w3",
+        "title": "White Ribbed Tank Top",
+        "category": "tops",
+        "style_tags": ["basics", "minimal", "layering"],
+        "colors": ["white"],
+        "fit_notes": "fitted, good base layer"
+      },
+      {
+        "id": "w4",
+        "title": "Oversized Brown Hoodie",
+        "category": "tops",
+        "style_tags": ["cozy", "oversized", "casual"],
+        "colors": ["brown", "tan"],
+        "fit_notes": "very oversized, good for layering under coats"
+      }
+    ]
+  },
+  "empty_wardrobe": {
+    "size": null,
+    "style_preferences": [],
+    "items": []
+  }
+}
